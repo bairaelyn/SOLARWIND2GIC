@@ -1,5 +1,7 @@
 # FOLDERS
 plots
+models
+*_old*
 
 # PYTHON
 # Byte-compiled / optimized / DLL files

@@ -113,7 +113,7 @@ class SolarWindFeatureEncoder:
 class TriangularValueEncoding(object):
     def __init__(self, max_value, min_value, n_nodes: int, normalize: bool = False):
         """
-        Code originally from M. Widrich, Python package widis-lstm-tools (2021):
+        Code originally from M. Widrich, Python package widis-lstm-tools (Feb 2021):
         https://github.com/widmi/widis-lstm-tools/blob/master/widis_lstm_tools/preprocessing.py
         
         Encodes values in range [min_value, max_value] as array of shape (len(values), n_nodes)

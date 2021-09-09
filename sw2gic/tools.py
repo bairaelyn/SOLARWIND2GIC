@@ -224,7 +224,7 @@ def compute_metrics(y_rt, y_pred, y_pers):
     print("RMSE = {} ({}) mV/km\nPCC = {} ({})".format(rmse_str, rmse_pers_str, pcc_str, pcc_pers_str))
 
 
-def plot_on_time_series(y_rt, y_pred, y_pers):
+def plot_on_time_series(y_rt, y_pred, y_pers, year=2017):
     '''For quick visualisation of results on a time series.
     
     Parameters:
@@ -241,7 +241,16 @@ def plot_on_time_series(y_rt, y_pred, y_pers):
     None, just prints a nice string.
     '''
     # Time range:
-    start_rt, end_rt = datetime(2017,1,1)+timedelta(hours=2), datetime(2018,1,1)
+    if year == 2017:
+        start_rt = datetime(2017,1,1)+timedelta(hours=2)
+        xlims = (datetime(2017,8,15), datetime(2017,9,30))
+        xlims_cut = (datetime(2017,9,6), datetime(2017,9,11))
+        title_str = "Sept 2017"
+    elif year == 2000:
+        start_rt = datetime(2000,1,1)+timedelta(hours=2)
+        xlims = (datetime(2000,6,26), datetime(2000,8,5))
+        xlims_cut = (datetime(2000,7,13), datetime(2000,7,19))
+        title_str = "July 2000"
     run_model_every = 15 # minutes
 
     # Find times for every point of run_model_every:
@@ -256,7 +265,7 @@ def plot_on_time_series(y_rt, y_pred, y_pers):
         ax.set_xlabel("Time [UTC]")
         ax.set_ylabel("E-field [mV/km]")
     ax1.set_xlim((t[0], t[-1]))
-    ax1.set_xlim((datetime(2017,8,15), datetime(2017,9,30)))
-    ax2.set_xlim((datetime(2017,9,6), datetime(2017,9,11)))
-    ax1.set_title("Geoelectric field vs. ML predictions for Sept 2017 Storm")
+    ax1.set_xlim(xlims)
+    ax2.set_xlim(xlims_cut)
+    ax1.set_title("Geoelectric field vs. ML predictions for {} Storm".format(title_str))
     plt.show()

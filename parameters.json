@@ -7,8 +7,8 @@
     "offset_tr": 10,
     "a_SS1": 0.03770,
     "b_SS1": 0.03190,
-    "a_SS2": 0.00444,
-    "b_SS2": 0.05552,
+    "a_SS5": 0.00444,
+    "b_SS5": 0.05552,
     "subtract_daily_avg": false, 
     "window_daily_avg": 10, 
     "backprop_omni": false,
@@ -24,5 +24,5 @@
     "c_Ex": "#e69f00",
     "c_Ey": "#56b3e9",
     "c_SS1": "#009e73",
-    "c_SS2": "#cc79a7"
+    "c_SS5": "#cc79a7"
 }

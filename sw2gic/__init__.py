@@ -11,4 +11,4 @@ from .training import BasicAttention, DataStorer, min_max_loss
 from .training import get_model, fit_model, find_folds
 
 from .tools import extract_time_from_pos, extract_local_time_variables
-from .tools import calc_event_rates, compute_CM, compute_metrics
+from .tools import calc_event_rates, compute_CM, compute_metrics, plot_on_time_series
