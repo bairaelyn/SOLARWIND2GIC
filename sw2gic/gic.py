@@ -4,8 +4,12 @@
 sw2gic/gic.py
 Functions for handling GIC data and modelling.
 
+NOTE: These functions can also be found (in updated and more
+comprehensive form) in the package 'gictools':
+https://github.com/bairaelyn/gic-tools
+
 Created July 2021 by R Bailey, ZAMG Conrad Observatory (Vienna).
-Last updated August 2021.
+Last updated November 2021.
 --------------------------------------------------------------------
 '''
 
