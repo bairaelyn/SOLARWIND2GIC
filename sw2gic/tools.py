@@ -96,11 +96,11 @@ def extract_time_from_pos(ar, start, end, zero_time=datetime(1995,1,1), axis=0):
 #               FUNCTIONS FOR CALCULATING METRICS
 # *******************************************************************
     
-def calc_event_rates(confusion_matrix):
+def calc_event_rates(CM):
     '''Takes a confusion matrix as produced by sklearn and returns a dictionary
     with common event counts and the True Skill Score + Heidke Skill Score.'''
     
-    TN, FP, FN, TP = confusion_matrix.ravel()
+    TN, FP, FN, TP = CM.ravel()
     
     metrics = {}
     
@@ -116,6 +116,8 @@ def calc_event_rates(confusion_matrix):
     metrics['FPR'] = FPR
     metrics['POFD'] = FPR
     metrics['FNR'] = FN / (TP + FN)
+    metrics['FDR'] = FP / (TP + FP)
+    metrics['PPV'] = TP / (TP + FP)
     
     metrics['TS'] = TP / (TP + FP + FN)
     metrics['TSS'] = TPR - FPR
